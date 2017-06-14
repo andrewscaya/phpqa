@@ -27,7 +27,7 @@ class IgnoredPaths
 
     public function pdepend()
     {
-        return $this->ignore(' --ignore=/', '/,/', '/', ',/');
+        return $this->ignore(' --ignore=', ',', '', ',');
     }
 
     public function phpmd()
