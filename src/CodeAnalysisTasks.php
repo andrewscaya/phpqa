@@ -207,7 +207,6 @@ trait CodeAnalysisTasks
     private function phploc()
     {
         $args = array(
-            'progress' => '',
             $this->options->ignore->bergmann(),
             $this->options->getAnalyzedDirs(' '),
         );
