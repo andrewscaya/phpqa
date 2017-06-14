@@ -48,7 +48,7 @@ class IgnoredPaths
             return $ignores;
         }
         
-        return $this->implode($ignores, ' --ignore', ',', '');
+        return $this->implode($ignores, ' --ignore=', ',', '');
     }
 
     public function phpmd()
@@ -57,7 +57,7 @@ class IgnoredPaths
         $ignores = $this->pdepend(true);
         
         // return with --exclude instead of --ignore - SILLY THINGS
-        return $this->implode($ignores, ' --exclude', ',', '');
+        return $this->implode($ignores, ' --exclude ', ',', '');
     }
 
     public function phpmetrics()
