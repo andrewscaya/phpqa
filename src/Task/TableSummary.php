@@ -78,7 +78,7 @@ class TableSummary
 
     private function getStatus($isOk)
     {
-        return $isOk ? '<info>✓</info>' : '<error>x</error>';
+        return $isOk ? '<info>√</info>' : '<error>x</error>';
     }
 
     // copy-paste from \Robo\Common\TaskIO
