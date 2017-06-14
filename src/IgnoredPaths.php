@@ -54,7 +54,7 @@ class IgnoredPaths
     public function phpmd()
     {
         //build our list identically to what we did for pdepends madness
-        $list = $this->pdepend(true);
+        $ignores = $this->pdepend(true);
         
         // return with --exclude instead of --ignore - SILLY THINGS
         return $this->implode($ignores, ' --exclude', ',', '');
