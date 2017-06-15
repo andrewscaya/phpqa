@@ -25,7 +25,7 @@ goals:
 Todo list
 
 - [x] Make it work on windows - might have broken it on nix but for now don't care, it runs and works :)
-- [ ] Add phpunit and code coverage output as a tool
+- [x] Add phpunit and code coverage output as a tool
 - [ ] Fix the command line (sigh) and configuration ( we'll keep yml for now, but we should allow any pluggable format - they all get parsed into php arrays anyway)
 - [ ] Make tool system pluggable
 - [ ] Make output system pluggable
