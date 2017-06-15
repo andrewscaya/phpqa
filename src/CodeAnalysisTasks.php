@@ -229,7 +229,7 @@ trait CodeAnalysisTasks
 			'configuration' => $config,
         );
 		 if ($this->options->isSavedToFiles) {
-            $tool->htmlReport = $this->options->rawFile('phpunit/index.html');
+            $tool->userReports = $this->options->rawFile('phpunit/index.html');
         }
         
         return $args;
