@@ -9,7 +9,7 @@ trait CodeAnalysisTasks
         'phpunit' => array(
 			'composer' => 'phpunit/phpunit',
 			'binary' => 'phpunit',
-			'outputMode' => OutputMode::XML_CONSOLE_OUTPUT,
+			'outputMode' => OutputMode::RAW_CONSOLE_OUTPUT,
 		),
         'phpmetrics' => array(
             'optionSeparator' => ' ',
