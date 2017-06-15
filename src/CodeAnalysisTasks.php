@@ -6,6 +6,11 @@ trait CodeAnalysisTasks
 {
     /** @var array [tool => optionSeparator] */
     private $tools = array(
+        'phpunit' => array(
+			'composer' => 'phpunit/phpunit',
+			'binary' => 'phpunit',
+			'outputMode' => OutputMode::XML_CONSOLE_OUTPUT,
+		),
         'phpmetrics' => array(
             'optionSeparator' => ' ',
             'composer' => 'phpmetrics/phpmetrics',
@@ -213,6 +218,20 @@ trait CodeAnalysisTasks
         if ($this->options->isSavedToFiles) {
             $args['log-xml'] = $this->options->toFile('phploc.xml');
         }
+        return $args;
+    }
+    
+    private function phpunit(RunningTool $tool)
+    {
+		$config = $this->config->value('phpunit.config');
+	
+        $args = array(
+			'configuration' => $config,
+        );
+		 if ($this->options->isSavedToFiles) {
+            $tool->htmlReport = $this->options->rawFile('phpunit/index.html');
+        }
+        
         return $args;
     }
 
