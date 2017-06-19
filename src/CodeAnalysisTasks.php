@@ -198,6 +198,8 @@ trait CodeAnalysisTasks
     {
         $binary = pathToBinary($tool->binary);
         $process = $this->taskExec($binary);
+	// we should make this a configuration setting, for now mjollnir it
+	$process->setTimeout(3600);
         $method = str_replace('-', '', $tool);
         foreach ($this->{$method}($tool) as $arg => $value) {
             if (is_int($arg)) {
