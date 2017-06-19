@@ -189,6 +189,8 @@ trait CodeAnalysisTasks
         foreach ($this->usedTools as $tool) {
             $exec = $this->toolToExec($tool);
             $tool->process = $group->process($exec);
+	    // we should make this a configuration setting, for now mjollnir it
+	    $tool->process->setTimeout(3600);
         }
         $group->printed($this->options->isOutputPrinted)->run();
     }
@@ -198,8 +200,6 @@ trait CodeAnalysisTasks
     {
         $binary = pathToBinary($tool->binary);
         $process = $this->taskExec($binary);
-	// we should make this a configuration setting, for now mjollnir it
-	$process->setTimeout(3600);
         $method = str_replace('-', '', $tool);
         foreach ($this->{$method}($tool) as $arg => $value) {
             if (is_int($arg)) {
