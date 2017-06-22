@@ -47,7 +47,7 @@ trait CodeAnalysisTasks
             'binary' => 'phpcs',
         ),
         'php-cs-fixer' => array(
-            'optionSeparator' => ' ',
+            'optionSeparator' => '=',
             'internalClass' => 'PhpCsFixer\Config',
             'outputMode' => OutputMode::XML_CONSOLE_OUTPUT,
             'composer' => 'friendsofphp/php-cs-fixer',
